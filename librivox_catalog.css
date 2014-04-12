@@ -1,0 +1,28 @@
+#mode {
+        float: right;
+}
+
+table,td,th {
+table-layout:fixed;
+border:1.5px #00f0f0 solid;
+}
+
+span#green{color: green}
+
+td.English {color: green}
+td.German {color: blue}
+td.French {color: magenta}
+td.Dutch {color: cyan}
+td.Japanese {color: red}
+
+div#summary
+{
+max-height: 400px;
+overflow: auto;
+}
+
+div#contents
+{
+max-height: 800px;
+overflow: auto;
+}
