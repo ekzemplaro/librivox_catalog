@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	search_display.js
 //
-//					Mar/23/2014
+//					Apr/19/2014
 //
 // -----------------------------------------------------------------------
 // [8]:
@@ -121,11 +121,11 @@ function select_parser_proc
 	var category = array_genres[index_category];
 	var group = array_group[index_group];
 
-	var str_tmp = "***  going = " + going + "<br />";
-	str_tmp += "***  language = " + language + "<br />";
-	str_tmp += "***  category = " + category + "<br />";
-	str_tmp += "***  group = " + group + "<br />";
-	jQuery("#outarea_dd").html (str_tmp);
+//	var str_tmp = "***  going = " + going + "<br />";
+//	str_tmp += "***  language = " + language + "<br />";
+//	str_tmp += "***  category = " + category + "<br />";
+//	str_tmp += "***  group = " + group + "<br />";
+//	jQuery("#outarea_dd").html (str_tmp);
 
 	if (going === array_going[0])
 		{

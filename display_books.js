@@ -1,17 +1,12 @@
 // -----------------------------------------------------------------------
 //	display_books.js
 //
-//					Mar/22/2014
+//					Apr/19/2014
 //
 // -----------------------------------------------------------------------
 // [4]:
 function display_books_proc (data_out,db_authors,db_readers)
 {
-var str_out = db_authors["a599"].last_name;
-		str_out += "<br />";
-		jQuery("#outarea_dd").html (str_out);
-
-
 	var data_sorted = sort_by_date_proc (data_out);
 
 	var out_str = "<table>";
@@ -60,14 +55,8 @@ var str_out = db_authors["a599"].last_name;
 // [4-6]:
 function gen_record_proc (ncount,key,dd_cur,db_authors,db_readers)
 {
-		var key_author = "a" + dd_cur.authors;
-// var str_out = db_authors["a599"].last_name;
-if (key_author in db_authors)
-{
-var str_out = db_authors[key_author].last_name;
-		str_out += "<br />";
-		jQuery("#outarea_ee").html (str_out);
-}
+//	var key_author = "a" + dd_cur.authors;
+
 	var out_str = "<tr><td>" + ncount + "</td>";
 
 	out_str += td_id_gen_proc (key,dd_cur);
