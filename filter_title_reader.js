@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	filter_title_reader.js
 //
-//					Apr/19/2014
+//					Apr/25/2014
 //
 // -----------------------------------------------------------------------
 function filter_title_reader_proc (data_in,key_title,key_reader,db_readers)
@@ -27,11 +27,14 @@ function filter_title_proc (data_in,key_title)
 {
 	var data_out = new Object ();
 
+	var data_reg = new RegExp (key_title,"i");
+
 	var nn_count = 0;
 	for (var key in data_in)
 		{
 		var title = "" + data_in[key].title;
-		if (0<= title.indexOf (key_title))
+		if (title.search (data_reg) != -1)
+//		if (0<= title.indexOf (key_title))
 			{
 			data_out[key] = data_in[key];
 			}
@@ -46,6 +49,8 @@ function filter_title_proc (data_in,key_title)
 function filter_reader_proc (data_in,key_reader,db_readers)
 {
 	var data_out = new Object ();
+
+	var data_reg = new RegExp (key_reader,"i");
 
 	for (var key in data_in)
 		{
@@ -62,7 +67,8 @@ function filter_reader_proc (data_in,key_reader,db_readers)
 
 			if (reader != null)
 				{
-				if (0<= reader.indexOf (key_reader))
+				if (reader.search (data_reg) != -1)
+//				if (0<= reader.indexOf (key_reader))
 					{
 					flag_copy = true;
 					}
