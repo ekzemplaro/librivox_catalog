@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	search_display.js
 //
-//					Apr/19/2014
+//					May/11/2014
 //
 // -----------------------------------------------------------------------
 // [8]:
@@ -47,16 +47,21 @@ function search_display_proc (data_received,array_going,array_group)
 function search_display_s2_proc
 	(data_received,array_going,array_group,array_languages,array_categories)
 {
+	jQuery ("#outarea_bb").text ("*** search_display_s2_proc ***");
+
 	var data_out = select_parser_proc
 			(data_received.books,array_going,
 			array_languages,array_categories,array_group);
 	var key_title = jQuery("input#title").val ();
+	var key_author = jQuery("input#author").val ();
 	var key_reader = jQuery("input#reader").val ();
 
-	if ((0 < key_title.length) || (0 < key_reader.length))
+	if ((0 < key_title.length) || (0 < key_author.length)
+			|| (0 < key_reader.length))
 		{
-		data_out = filter_title_reader_proc
-			(data_out,key_title,key_reader,data_received.readers);
+		data_out = filter_title_author_reader_proc
+			(data_out,key_title,key_author,key_reader,
+			data_received.authors,data_received.readers);
 		}
 
 	var out_str = display_books_proc
@@ -79,6 +84,11 @@ function display_select_proc
 	str_out += 'title';
 	str_out += '<input type="text" id="title">';
 	str_out += '&nbsp&nbsp';
+
+	str_out += 'author';
+	str_out += '<input type="text" id="author">';
+	str_out += '&nbsp&nbsp';
+
 	str_out += 'reader';
 	str_out += '<input type="text" id="reader">';
 	str_out += '&nbsp&nbsp';
