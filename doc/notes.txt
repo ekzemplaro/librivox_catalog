@@ -1,0 +1,59 @@
+
+The following IDs are missing.<br />
+<blockquote>
+ID 5556<br />
+ID 5583<br />
+ID 5585<br />
+ID 5611<br />
+ID 5626<br />
+ID 5651<br />
+ID 5654<br />
+ID 5656<br />
+ID 5657<br />
+ID 5681<br />
+ID 5700<br />
+ID 5701<br />
+ID 5714<br />
+ID 5728<br />
+ID 5729<br />
+
+ID 5844<br />
+ID 5845<br />
+ID 5846<br />
+ID 5847<br />
+ID 5890<br />
+ID 5909<br />
+ID 5919<br />
+ID 5929<br />
+ID 5930<br />
+ID 5931<br />
+ID 5932<br />
+ID 5978<br />
+ID 5991<br />
+ID 5997<br />
+
+ID 6012<br />
+ID 6040<br />
+ID 6083<br />
+ID 6084<br />
+ID 6085<br />
+ID 6108<br />
+ID 6125<br />
+ID 6152<br />
+ID 6154<br />
+ID 6162<br />
+ID 6174<br />
+
+ID 6234<br />
+ID 6255<br />
+ID 6381<br />
+ID 6432<br />
+ID 6567<br />
+ID 6597<br />
+ID 6636<br />
+ID 6927<br />
+</blockquote>
+
+<blockquote>
+On-going projects don't have a language information.<br />
+</blockquote>
