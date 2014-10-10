@@ -8,4 +8,6 @@ You can get information about LibriVox at <http://www.librivox.org>.
 
 3) Access http://server_root/librivox_catalog.html
 
-May/11/2014
+4) Example: http://ekzemplaro.org/librivox/catalog/
+
+Oct/01/2014
