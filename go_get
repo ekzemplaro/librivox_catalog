@@ -1,5 +1,5 @@
 #
-mv db_catalog.json db_catalog.json_old
+ls -al db_catalog.json
 #
 DB_MERGE=/home/uchida/librivox/api/git/new_api/catalog/db_merge
 cp -p $DB_MERGE/db_catalog.json .
