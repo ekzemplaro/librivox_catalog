@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	search_display.js
 //
-//					May/11/2014
+//					Jan/15/2015
 //
 // -----------------------------------------------------------------------
 // [8]:
@@ -20,8 +20,10 @@ function search_display_proc (data_received,array_going,array_group)
 	jQuery("#menu").html (str_menu);
 	jQuery("#summary").html ("<br />");
 
+	var value_sort = jQuery ("#sort").val ();
 	var out_str = display_books_proc
-		(data_received.books,data_received.authors,data_received.readers);
+		(data_received.books,data_received.authors,
+		data_received.readers,value_sort);
 
 	
 	jQuery("#contents").html (out_str);
@@ -37,6 +39,14 @@ function search_display_proc (data_received,array_going,array_group)
 
 	jQuery ("button.search").click (function ()
 		{
+		search_display_s2_proc
+			(data_received,array_going,
+			array_group,array_languages,array_genres);
+		});
+
+
+	jQuery ("#sort").change (function ()
+               	{
 		search_display_s2_proc
 			(data_received,array_going,
 			array_group,array_languages,array_genres);
@@ -64,8 +74,10 @@ function search_display_s2_proc
 			data_received.authors,data_received.readers);
 		}
 
+	var value_sort = jQuery ("#sort").val ();
 	var out_str = display_books_proc
-			(data_out,data_received.authors,data_received.readers);
+			(data_out,data_received.authors,
+			data_received.readers,value_sort);
 
 	jQuery("#contents").html (out_str);
 }
@@ -79,6 +91,11 @@ function display_select_proc
 	str_out += display_select_box_proc ('search','language',array_languages);
 	str_out += display_select_box_proc ('search','genre',array_genres);
 	str_out += display_select_box_proc ('search','group',array_group);
+
+	var array_sort = ["sort_by_date",
+		"sort_by_author","sort_by_title"];
+
+	str_out += display_select_box_proc ('sort','sort',array_sort);
 
 	str_out += '<p />';
 	str_out += 'title';
@@ -126,6 +143,9 @@ function select_parser_proc
 	var index_category = jQuery ("#genre").get(0).selectedIndex;
 	var index_group = jQuery ("#group").get(0).selectedIndex;
 
+	var index_sort = jQuery ("#sort").get(0).selectedIndex;
+	var value_sort = jQuery ("#sort").val ();
+
 	var going = array_going[index_going];
 	var language = array_languages[index_language];
 	var category = array_genres[index_category];
@@ -135,7 +155,9 @@ function select_parser_proc
 //	str_tmp += "***  language = " + language + "<br />";
 //	str_tmp += "***  category = " + category + "<br />";
 //	str_tmp += "***  group = " + group + "<br />";
-//	jQuery("#outarea_dd").html (str_tmp);
+	var str_tmp = "***  sort = " + index_sort + "<br />";
+	str_tmp += "***  sort = " + value_sort + "<br />";
+	jQuery("#outarea_dd").html (str_tmp);
 
 	if (going === array_going[0])
 		{

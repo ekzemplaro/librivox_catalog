@@ -1,13 +1,25 @@
 // -----------------------------------------------------------------------
 //	display_books.js
 //
-//					Apr/19/2014
+//					Jan/16/2015
 //
 // -----------------------------------------------------------------------
 // [4]:
-function display_books_proc (data_out,db_authors,db_readers)
+function display_books_proc (data_out,db_authors,db_readers,value_sort)
 {
-	var data_sorted = sort_by_date_proc (data_out);
+	var data_sorted = new Array();
+	if (value_sort == "sort_by_date")
+		{
+		data_sorted = sort_by_date_proc (data_out);
+		}
+	else if (value_sort == "sort_by_title")
+		{
+		data_sorted = sort_by_title_proc (data_out);
+		}
+	else
+		{
+		data_sorted = sort_by_author_proc (data_out,db_authors);
+		}
 
 	var out_str = "<table>";
 
