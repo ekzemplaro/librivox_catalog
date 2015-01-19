@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	sort_by_title.js
 //
-//					Jan/15/2015
+//					Jan/17/2015
 //
 // ---------------------------------------------------------------
 function sort_by_title_proc (obj_in)
@@ -20,19 +20,8 @@ function sort_by_title_proc (obj_in)
 // ---------------------------------------------------------------
 function sort_by_title_function (left, right)
 {
-	var aa = "";
-	var bb = "";
-
-	if ("title" in left.value)
-		{
-		aa  = left.value.title;
-		}
-
-	if ("title" in right.value)
-		{
-		bb = right.value.title;
-		}
-
+	var aa = to_title_proc (left.value);
+	var bb = to_title_proc (right.value);
 
 	var rvalue = 0;
 
@@ -46,6 +35,19 @@ function sort_by_title_function (left, right)
 		}
 
 	return rvalue;
+}
+
+// ---------------------------------------------------------------
+function to_title_proc (value_in)
+{
+	var aa = "";
+
+	if ("title" in value_in)
+		{
+		aa  = value_in.title;
+		}
+
+	return	aa;
 }
 
 // ---------------------------------------------------------------

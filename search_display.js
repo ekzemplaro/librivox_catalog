@@ -1,12 +1,14 @@
 // -----------------------------------------------------------------------
 //	search_display.js
 //
-//					Jan/15/2015
+//					Jan/19/2015
 //
 // -----------------------------------------------------------------------
 // [8]:
 function search_display_proc (data_received,array_going,array_group)
 {
+	var data_out = new Object ();
+
 	var array_languages = data_received.languages;
 
 	array_languages.unshift (["All languages"]);
@@ -24,14 +26,14 @@ function search_display_proc (data_received,array_going,array_group)
 	var out_str = display_books_proc
 		(data_received.books,data_received.authors,
 		data_received.readers,value_sort);
-
 	
 	jQuery("#contents").html (out_str);
 
+	data_out = data_received.books; 
 
 	jQuery (".search").change (function ()
                	{
-		search_display_s2_proc
+		data_out = search_display_s2_proc
 			(data_received,array_going,
 			array_group,array_languages,array_genres);
 		});
@@ -39,7 +41,7 @@ function search_display_proc (data_received,array_going,array_group)
 
 	jQuery ("button.search").click (function ()
 		{
-		search_display_s2_proc
+		data_out = search_display_s2_proc
 			(data_received,array_going,
 			array_group,array_languages,array_genres);
 		});
@@ -47,9 +49,17 @@ function search_display_proc (data_received,array_going,array_group)
 
 	jQuery ("#sort").change (function ()
                	{
+/*
 		search_display_s2_proc
 			(data_received,array_going,
 			array_group,array_languages,array_genres);
+*/
+	var value_sort = jQuery ("#sort").val ();
+	var out_str = display_books_proc
+			(data_out,data_received.authors,
+			data_received.readers,value_sort);
+
+	jQuery("#contents").html (out_str);
 		});
 }
 
@@ -80,6 +90,8 @@ function search_display_s2_proc
 			data_received.readers,value_sort);
 
 	jQuery("#contents").html (out_str);
+
+	return	data_out;
 }
 
 // -----------------------------------------------------------------------

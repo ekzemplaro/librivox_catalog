@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------
 //	sort_by_date.js
 //
-//					Nov/20/2013
+//					Jan/17/2015
 //
 // ---------------------------------------------------------------
 function sort_by_date_proc (obj_in)
@@ -20,23 +20,8 @@ function sort_by_date_proc (obj_in)
 // ---------------------------------------------------------------
 function sort_by_date_function(left, right)
 {
-	var aa = new Date ("25 Aug 2092");
-	var bb = new Date ("25 Aug 2092");
-
-	if ("publicdate" in left.value)
-		{
-		var dd_aa  = left.value.publicdate;
-		dd_aa = dd_aa.replace(/-/g,'/');
-		aa = Date.parse (dd_aa);
-		}
-
-	if ("publicdate" in right.value)
-		{
-		var dd_bb = right.value.publicdate;
-		dd_bb = dd_bb.replace(/-/g,'/');
-		bb = Date.parse (dd_bb);
-		}
-
+	var aa = to_date_proc (left.value);
+	var bb = to_date_proc (right.value);
 
 	var rvalue = 0;
 
@@ -64,6 +49,21 @@ function sort_by_date_function(left, right)
 		}
 
 	return rvalue;
+}
+
+// ---------------------------------------------------------------
+function to_date_proc (value_in)
+{
+	var aa = new Date ("25 Aug 2092");
+
+	if ("publicdate" in value_in)
+		{
+		var dd_aa  = value_in.publicdate;
+		dd_aa = dd_aa.replace(/-/g,'/');
+		aa = Date.parse (dd_aa);
+		}
+
+	return	aa;
 }
 
 // ---------------------------------------------------------------
