@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------
 //	display_books.js
 //
-//					Jan/16/2015
+//					Feb/11/2015
 //
 // -----------------------------------------------------------------------
 // [4]:
@@ -32,6 +32,7 @@ function display_books_proc (data_out,db_authors,db_readers,value_sort)
 	out_str +='<th>completed</th>';
 	out_str +="<th>totaltime</th>";
 	out_str +="<th class=\"reader\">readers</th>";
+	out_str +="<th>wiki</th>";
 	out_str +="</tr>";
 
 	var ncount = 0;
@@ -94,6 +95,8 @@ function gen_record_proc (ncount,key,dd_cur,db_authors,db_readers)
 
 	out_str += td_reader_gen_proc (dd_cur,db_readers);
  
+	out_str += "<td>" + dd_cur.status + "</td>";
+
 	out_str += "</tr>";
 
 	return	out_str;
