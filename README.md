@@ -4,13 +4,13 @@ You can get information about LibriVox at <http://www.librivox.org>.
 
 1) Place the data at http server (Apache2 or Nginx).
 
-2) Place jquery-3.0.0.min.js at (server_root)/js
+2) Place jquery-3.1.0.min.js at (server_root)/js
 
 3) Access http://server_root/librivox_catalog.html
 
 4) Example: http://ekzemplaro.org/librivox/catalog/
 
-Jun/02/2016
+Jul/18/2016
 
 
 -----------------------------------------------------------------------
