@@ -1,20 +1,20 @@
 // -----------------------------------------------------------------------
 //	librivox_catalog.js
 //
-//					Jan/15/2015
+//					Oct/23/2016
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
 	jQuery("#outarea_aa").html
-		("*** librivox_catalog *** start *** Jan/15/2015 ***");
+		("*** librivox_catalog *** start *** Oct/23/2016 ***");
 
 	var file_json = "db_catalog.json";
 
 	fetch_json_proc (file_json);
 
 	jQuery("#outarea_hh").html
-		("*** librivox_catalog *** end *** Jan/15/2015 ***");
+		("*** librivox_catalog *** end *** Oct/23/2016 ***");
 });
 
 // -----------------------------------------------------------------------

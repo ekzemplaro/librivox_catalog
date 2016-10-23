@@ -105,7 +105,7 @@ function display_select_proc
 	str_out += display_select_box_proc ('search','group',array_group);
 
 	var array_sort = ["sort_by_date",
-		"sort_by_author","sort_by_title"];
+		"sort_by_author","sort_by_title","sort_by_totaltime"];
 
 	str_out += display_select_box_proc ('sort','sort',array_sort);
 
